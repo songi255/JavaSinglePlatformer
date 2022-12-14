@@ -26,19 +26,19 @@ public class StateMachine_server {
 			// 최상위클래스일시만 초기화한다.
 			StateList[] states = StateList.values();
 			for (StateList stateKind : states) {
-				Class<? extends State_server> clazz =(Class<? extends State_server>) Class.forName(getClass().getPackage().getName() + ".State_server_" + stateKind.name());
+				Class<? extends State_server> clazz = (Class<? extends State_server>) Class.forName(
+						getClass().getPackage().getName() + ".State_server_" + stateKind.name());
 				Constructor<? extends State_server> constructor = clazz.getConstructor(Player_Server.class);
 				State_server state = constructor.newInstance(this.player);
 				this.states.put(stateKind, state);
 			}
 			transfer(StateList.wait);
 			System.out.println("State 초기화 완료!" + this.states.size());
-			System.out.println(getClass().getName() + "생성 완료!!!!!!!!!!");
+			//System.out.println(getClass().getName() + "생성 완료!!!!!!!!!!");
 		} catch (Exception e) {
 			System.out.println("state 초기화 실패!!");
 			e.printStackTrace();
 		}
-
 	}
 
 	public void Collsion_solid() {

@@ -26,7 +26,7 @@ public abstract class Obj implements Comparable<Obj>{
 		Class clazz = getClass();
 		String name = clazz.getSimpleName();
 		name = name.split("_")[0];
-		System.out.println(name + "!!!!!!!!!!!!!!!!!!!!!!!!!!");
+		System.out.println(name + "created");
 		ObjKind = ObjList.valueOf(name);
 	}
 

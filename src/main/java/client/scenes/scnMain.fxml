@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.*?>
+
+
+<BorderPane prefHeight="720.0" prefWidth="1280.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.controllers.MainController">
+	<padding>
+		<Insets topRightBottomLeft="10.0" />
+	</padding>			
+	<!-- 게임방 목록 및 메뉴 표시 영역  -->
+	<center >
+		<VBox prefHeight="500.0" prefWidth="1280.0" >
+			<BorderPane.margin>
+				<Insets left="10.0" right="10.0" top="10.0" />
+			</BorderPane.margin>
+			<children>
+				<Label text="게임방" />
+				<TableView id="tableView_RoomList" >
+					<VBox.margin>
+						<Insets bottom="10.0" />
+					</VBox.margin>
+					<columns>
+						<TableColumn text="번호" resizable="false" prefWidth="200.0" />
+						<TableColumn text="이름" resizable="false" prefWidth="440.0" />
+						<TableColumn text="인원" resizable="false" prefWidth="200.0" />
+						<TableColumn text="상태" resizable="false"  prefWidth="200.0" />
+						<TableColumn text="공개/비공개" resizable="false"  prefWidth="200.0" />
+					</columns>
+				</TableView>
+				<HBox alignment="CENTER" spacing="10">
+					<children>
+						<Button fx:id="btnCreateRoom" prefWidth="100.0" text="방만들기" />
+						<Button fx:id="btnJoinRoom" prefWidth="100.0" text="참가" />
+						<Button fx:id="btnQuickStart" prefWidth="100.0" text="랜덤 매치" />
+						<Button prefWidth="100.0" text="설정" />
+						<Button fx:id="btnLog_out" prefWidth="100.0" text="로그아웃" />
+					</children>
+				</HBox>
+				<Separator >
+					<VBox.margin>
+						<Insets top="10.0" />
+					</VBox.margin>
+				</Separator>
+			</children>
+		</VBox>
+	</center>
+	
+	<!-- 접속자 및 채팅창 표시 영역  -->
+	<bottom>
+		<BorderPane prefHeight="250.0" >
+			<!-- 채팅창 표시 영역  -->
+			<center>
+				<VBox >
+					<BorderPane.margin>
+						<Insets topRightBottomLeft="10.0" />
+					</BorderPane.margin>
+					<children>
+						<Label text="채팅창" />	
+						<TextArea fx:id="txtComm" VBox.vgrow="ALWAYS" >
+							<VBox.margin>
+								<Insets bottom="10.0" />
+							</VBox.margin>
+						</TextArea>
+					</children>
+					<HBox spacing="10.0">
+						<children>
+							<ComboBox fx:id="chat_range" prefWidth="150.0" promptText="채팅 범위">
+								<items>
+									<FXCollections fx:factory="observableArrayList">
+										<String fx:value="일반 채팅" />
+										<String fx:value="귓속말" />
+									</FXCollections>
+								</items>
+							</ComboBox>
+							<TextField fx:id="txtSentence" HBox.hgrow="ALWAYS" />
+							<Button fx:id="send">
+								<graphic>
+									<ImageView fitHeight="15.0" fitWidth="15.0" preserveRatio="true">
+										<image>
+											<Image url="@image/icon_send.png" />
+										</image>
+									</ImageView>
+								</graphic>
+							</Button>
+						</children>
+					</HBox>
+				</VBox>
+			</center>
+			<!-- 접속자 표시 영역 -->
+			<right>
+				<VBox alignment="TOP_CENTER" >
+					<BorderPane.margin>
+						<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+					</BorderPane.margin>
+					<children>
+						<Label text="접속자" />
+						<ListView fx:id="playerList" prefHeight="250.0" prefWidth="200.0" />
+					</children>
+				</VBox>
+			</right>
+		</BorderPane>
+	</bottom>
+</BorderPane>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.*?>
+<?import javafx.scene.control.TextField?>
+
+<VBox prefWidth="500.0" spacing="20.0" alignment="TOP_CENTER" xmlns:fx="http://javafx.com/fxml/1" >
+	<padding>
+		<Insets topRightBottomLeft="10.0" />
+	</padding>
+	
+	<children>
+		<Label text="---- 게임 방 생성 ----" />
+		<!-- 방 이름 및 비밀번호  -->
+		<HBox alignment="CENTER_LEFT" spacing="10.0" >
+			<children>
+				<Label text="방 이름" prefWidth="80.0"/>
+				<TextField id="roomTitle" HBox.hgrow="ALWAYS" />
+			</children>
+		</HBox>
+		<!-- 방 공개여부  -->
+		<HBox alignment="CENTER_LEFT" spacing="10.0" >
+			<children>
+				<Label text="방 비밀번호" prefWidth="80.0" />
+				<TextField id="roomPwd" HBox.hgrow="ALWAYS" />
+				<Label text="방 공개여부" prefWidth="80.0" />	
+				<ComboBox id="chkPublic" promptText="선택하세요." prefWidth="140.0" HBox.hgrow="ALWAYS" >
+					<items>
+						<FXCollections fx:factory="observableArrayList" >
+							<String fx:value="공개" />
+							<String fx:value="비공개" />
+						</FXCollections>
+					</items>
+				</ComboBox>
+			</children>
+		</HBox>
+		<HBox alignment="CENTER" spacing="20.0" >
+			<children>
+				<Button id="btnCreate" text="생성" prefWidth="60.0" />
+				<Button id="btnCancel" text="취소" prefWidth="60.0" />
+			</children>
+		</HBox>
+	</children>
+</VBox>

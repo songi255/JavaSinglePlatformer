@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+
+<HBox xmlns:fx="http://javafx.com/fxml/1" prefWidth="200" prefHeight="100" alignment="CENTER" spacing="10.0">
+	<children>
+		<Label id="e_msg" text="Exception_Message" HBox.hgrow="ALWAYS" />
+		<Button id="btnChk" text="확인" prefWidth="50.0" />
+	</children>
+</HBox>
+

@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.geometry.*?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.*?>
+
+<BorderPane prefHeight="720.0" prefWidth="1280.0" xmlns:fx="http://javafx.com/fxml/1" 
+			fx:id="root" fx:controller="client.controllers.WaitRoomController">
+	<padding>
+		<Insets topRightBottomLeft="10.0" />
+	</padding>
+	<!-- 방 정보 요약 표시  -->	
+	<top >
+		<HBox alignment="CENTER_LEFT" spacing="10.0" style="-fx-border-color:black; -fx-border-width:2px; -fx-border-radius:10;">
+			<padding>
+				<Insets topRightBottomLeft="10.0" />
+			</padding>
+			<BorderPane.margin>
+				<Insets topRightBottomLeft="10.0" />
+			</BorderPane.margin>
+			<children>
+				<Label text="방 번호" style="-fx-font-size:20;" />
+				<Label id="roomNo" text="방 번호" style="-fx-font-size:20;" />
+				<Separator orientation="VERTICAL" />
+				<Label text="방 제목" style="-fx-font-size:20;" />
+				<Label id="roomTitle" text="방 제목입니다." style="-fx-font-size:20;" />
+				<Separator orientation="VERTICAL" style="-fx-font-size:20;" />
+				<Label text="비밀번호" style="-fx-font-size:20;" />
+				<Label id="roomPwd" text="방 비밀번호" style="-fx-font-size:20;" />
+				<Separator HBox.hgrow="ALWAYS" visible="false" />
+				<Button fx:id="btnBack" text="나가기" opacity="100.0" >
+					<!-- <graphic>
+						<ImageView fitHeight="30" fitWidth="30" >
+							<Image url="@image/icon_back.png" />
+						</ImageView>
+					</graphic> -->
+				</Button>
+			</children>
+		</HBox>
+	</top>
+	<!-- 맵 및 플레이어 표시 영역  -->			
+	<center >
+		<HBox prefHeight="200.0" prefWidth="800.0" alignment="CENTER_LEFT" spacing="10.0">
+			<BorderPane.margin>
+				<Insets topRightBottomLeft="10.0" />
+			</BorderPane.margin>
+					
+			<!-- Player1 -->
+			<VBox prefWidth="200.0" alignment="CENTER" spacing="30.0" 
+				  style="-fx-border-color:black; -fx-border-width:2px; -fx-border-radius:20;" >
+				<padding >
+					<Insets right="10.0" left="10.0" /> 
+				</padding>  
+				<children>
+					<!-- 플레이어 이름 -->
+					<Label id="txtPlayer1" text="Player1" prefWidth="160.0" alignment="CENTER">
+						<font>
+							<Font size="20.0" />
+						</font>
+					</Label>
+					<!-- 팀 선택 -->
+					<HBox alignment="CENTER" spacing="10.0">
+						<children>
+							<Button id="btnTeamLeft1" text="◀" />
+							<Label id="txtTeam1" prefWidth="160.0" text="Team A" alignment="CENTER">
+								<font>
+									<Font size="20.0" />
+								</font>
+							</Label>
+							<Button id="btnTeamRight1" text="▶" />
+						</children>
+					</HBox>
+					<!-- 캐릭터 선택  -->
+					<HBox alignment="CENTER" spacing="10.0">
+						<children>
+							<Button id="btnCharLeft1" text="◀" />
+							<ImageView id="imgCharacter1" fitHeight="200.0" fitWidth="100.0" preserveRatio="true" >
+								<Image url = "@image/pers1.jpg" />
+							</ImageView>
+							<Button id="btnCharRight1" text="▶" />
+						</children>
+					</HBox>
+					<!-- 게임 준비 완료 or 대기 버튼  -->
+					<Button id="btnReady1" text="대기" prefWidth="120.0">
+						<font>
+							<Font size="20.0" />
+						</font>
+					</Button>
+				</children>			
+			</VBox>
+			<!-- Player2 -->
+			<VBox prefWidth="200.0" alignment="CENTER" spacing="30.0" 
+				  style="-fx-border-color:black; -fx-border-width:2px; -fx-border-radius:20;" >
+				<padding >
+					<Insets right="10.0" left="10.0" /> 
+				</padding>  
+				<children>
+					<!-- 플레이어 이름 -->
+					<Label id="txtPlayer2" text="Player2" prefWidth="160.0" alignment="CENTER">
+						<font>
+							<Font size="20.0" />
+						</font>
+					</Label>
+					<!-- 팀 선택 -->
+					<HBox alignment="CENTER" spacing="10.0">
+						<children>
+							<Button id="btnTeamLeft2" text="◀" />
+							<Label id="txtTeam2" prefWidth="160.0" text="Team A" alignment="CENTER">
+								<font>
+									<Font size="20.0" />
+								</font>
+							</Label>
+							<Button id="btnTeamRight2" text="▶" />
+						</children>
+					</HBox>
+					<!-- 캐릭터 선택  -->
+					<HBox alignment="CENTER" spacing="10.0">
+						<children>
+							<Button id="btnCharLeft2" text="◀" />
+							<ImageView id="imgCharacter2" fitHeight="200.0" fitWidth="100.0" preserveRatio="true" >
+								<Image url = "@image/pers2.jpg" />
+							</ImageView>
+							<Button id="btnCharRight2" text="▶" />
+						</children>
+					</HBox>
+					<!-- 게임 준비 완료 or 대기 버튼  -->
+					<Button id="btnReady2" text="대기" prefWidth="120.0" >
+						<font>
+							<Font size="20.0" />
+						</font>
+					</Button>
+				</children>			
+			</VBox>
+			<!-- Player3 -->
+			<VBox prefWidth="200.0" alignment="CENTER" spacing="30.0" 
+				  style="-fx-border-color:black; -fx-border-width:2px; -fx-border-radius:20;" >
+				<padding >
+					<Insets right="10.0" left="10.0" /> 
+				</padding>  
+				<children>
+					<!-- 플레이어 이름 -->
+					<Label id="txtPlayer3" text="Player3" prefWidth="160.0" alignment="CENTER">
+						<font>
+							<Font size="20.0" />
+						</font>
+					</Label>
+					<!-- 팀 선택 -->
+					<HBox alignment="CENTER" spacing="10.0">
+						<children>
+							<Button id="btnTeamLeft3" text="◀" />
+							<Label id="txtTeam3" prefWidth="160.0" text="Team A" alignment="CENTER">
+								<font>
+									<Font size="20.0" />
+								</font>
+							</Label>
+							<Button id="btnTeamRight3" text="▶" />
+						</children>
+					</HBox>
+					<!-- 캐릭터 선택  -->
+					<HBox alignment="CENTER" spacing="10.0">
+						<children>
+							<Button id="btnCharLeft3" text="◀" />
+							<ImageView id="imgCharacter3" fitHeight="170.0" fitWidth="100.0" preserveRatio="true" >
+								<Image url = "@image/pers3.jpg" />
+							</ImageView>
+							<Button id="btnCharRight3" text="▶" />
+						</children>
+					</HBox>
+					<!-- 게임 준비 완료 or 대기 버튼  -->
+					<Button id="btnReady3" text="대기" prefWidth="120.0" >
+						<font>
+							<Font size="20.0" />
+						</font>
+					</Button>
+				</children>			
+			</VBox>
+			<!-- Player4 -->
+			<VBox prefWidth="200.0" alignment="CENTER" spacing="30.0" 
+				  style="-fx-border-color:black; -fx-border-width:2px; -fx-border-radius:20;" >
+				<padding >
+					<Insets right="10.0" left="10.0" /> 
+				</padding>  
+				<children>
+					<!-- 플레이어 이름 -->
+					<Label id="txtPlayer4" text="Player4" prefWidth="160.0" alignment="CENTER">
+						<font>
+							<Font size="20.0" />
+						</font>
+					</Label>
+					<!-- 팀 선택 -->
+					<HBox alignment="CENTER" spacing="10.0">
+						<children>
+							<Button id="btnTeamLeft4" text="◀" />
+							<Label id="txtTeam4" prefWidth="160.0" text="Team A" alignment="CENTER">
+								<font>
+									<Font size="20.0" />
+								</font>
+							</Label>
+							<Button id="btnTeamRight4" text="▶" />
+						</children>
+					</HBox>
+					<!-- 캐릭터 선택  -->
+					<HBox alignment="CENTER" spacing="10.0">
+						<children>
+							<Button id="btnCharLeft4" text="◀" />
+							<ImageView id="imgCharacter4" fitHeight="170.0" fitWidth="100.0" preserveRatio="true" >
+								<Image url = "@image/pers4.jpg" />
+							</ImageView>
+							<Button id="btnCharRight4" text="▶" />
+						</children>
+					</HBox>
+					<!-- 게임 준비 완료 or 대기 버튼  -->
+					<Button id="btnReady4" text="대기" prefWidth="120.0" >
+						<font>
+							<Font size="20.0" />
+						</font>
+					</Button>
+				</children>			
+			</VBox>
+			
+			<!-- 채팅창 및 맵 표시 영역  -->
+			<VBox alignment="CENTER">
+				<BorderPane.margin>
+					<Insets topRightBottomLeft="10.0" />
+				</BorderPane.margin>
+				<children> 
+					<!-- 맵 미리보기 -->				
+					<Label text="맵 선택" >
+						<font>
+							<Font size="15.0" />
+						</font>
+					</Label>
+					<ImageView fitHeight="210.0" fitWidth="420.0" preserveRatio="false" 
+							   style="-fx-border-color:black; -fx-border-width:2px; -fx-border-radius:20;">
+						<Image url="@image/map1.jpg" />
+						<VBox.margin>
+							<Insets bottom="10.0" />
+						</VBox.margin>
+					</ImageView>
+					<!-- 맵 선택 -->
+					<HBox alignment="CENTER" spacing="10.0" >
+						<children>
+							<Button text="◀" />
+							<Label prefWidth="100.0" text="Map_name" alignment="CENTER" HBox.hgrow="ALWAYS" />
+							<Button text="▶" />
+						</children>
+					</HBox>
+					<Button fx:id="btnStart" text="시작" prefWidth="120.0" >
+						<VBox.margin>
+							<Insets top="10.0" bottom="30.0" />
+						</VBox.margin>
+						<font>
+							<Font size="20.0" />
+						</font>
+					</Button>
+				
+					<!-- 채팅창 -->
+					<Label text="채팅창" >
+						<font>
+							<Font size="15.0" />
+						</font>
+					</Label>	
+					<TextArea VBox.vgrow="ALWAYS">
+						<VBox.margin>
+							<Insets bottom="10.0" />
+						</VBox.margin>
+					</TextArea>
+				</children>
+				<HBox spacing="10.0">
+					<children>
+						<ComboBox prefWidth="100.0" promptText="채팅 범위">
+							<items>
+								<FXCollections fx:factory="observableArrayList">
+									<String fx:value="일반채팅" />
+									<String fx:value="귓속말" />
+								</FXCollections>
+							</items>
+						</ComboBox>
+						<TextField HBox.hgrow="ALWAYS" />
+						<Button>
+							<graphic>
+								<ImageView fitHeight="15.0" fitWidth="15.0" preserveRatio="true">
+									<image>
+										<Image url="@image/icon_send.png" />
+									</image>
+								</ImageView>
+							</graphic>
+						</Button>
+					</children>
+				</HBox>
+			</VBox>
+		</HBox>
+	</center>
+</BorderPane>
+

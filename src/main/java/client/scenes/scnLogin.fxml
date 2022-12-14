@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="720" prefWidth="1280" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8"
+fx:controller="client.controllers.LoginController">
+   <children>
+      <Label layoutX="505.0" layoutY="105.0" text="GAME">
+         <font>
+            <Font size="96.0" />
+         </font>
+      </Label>
+      <Label layoutX="505.0" layoutY="273.0" text="아이디" />
+      <TextField layoutX="505.0" layoutY="288.0" prefHeight="23.0" prefWidth="271.0" fx:id="txtId"/>
+      <TextField layoutX="505.0" layoutY="356.0" prefHeight="23.0" prefWidth="271.0" fx:id="txtPw"/>
+      <Label layoutX="505.0" layoutY="341.0" text="비밀번호" />
+      <Button layoutX="505.0" layoutY="426.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="271.0" text="로그인" fx:id="btnLogin"/>
+      <Button layoutX="44.0" layoutY="647.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="271.0" text="나가기" fx:id="btnExit"/>
+   </children>
+</AnchorPane>
